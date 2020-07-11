@@ -24,7 +24,6 @@ public class RootController {
     }
     @PostMapping("/")
     public String sendSearch(HttpServletRequest request, ModelMap model) throws IOException {
-        model.addAttribute("poisk", request.getParameter("search"));
         URL url = new URL(request.getParameter("search"));
         InputStream in = url.openStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
