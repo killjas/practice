@@ -3,7 +3,6 @@ package ru.itis.springbootdemo.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -18,23 +17,33 @@ import java.util.Map;
 public class RootController {
 
     @GetMapping("/")
-    public String getRootPage(ModelMap model) {
-        System.out.println("xxx");
-        return "index";
-    }
-    @PostMapping("/")
-    public String sendSearch(HttpServletRequest request, ModelMap model) throws IOException {
-        URL url = new URL(request.getParameter("search"));
-        InputStream in = url.openStream();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-        String line;
-        int i = 0;
-        Map<Integer, String> map = new HashMap<>();
-        while((line = reader.readLine()) != null){
-            map.put(i, line);
-            i++;
+    public String getRootPage(ModelMap model,HttpServletRequest request) throws IOException {
+        if(request.getParameter("search")!=null) {
+            URL url;
+            if(request.getParameter("search").indexOf("https://", -1) == 0 || request.getParameter("search").indexOf("http://", -1) == 0) {
+                url = new URL(request.getParameter("search"));
+            }
+            else{
+                url = new URL("https://" + request.getParameter("search"));
+            }
+            String site = url.getProtocol() + "://" + url.getHost();
+            InputStream in = url.openStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            String line;
+            int i = 0;
+            Map<Integer, String> twin_site = new HashMap<>();
+            while ((line = reader.readLine()) != null) {
+                twin_site.put(i, line);
+                i++;
+            }
+            model.addAttribute("site", site);
+            model.addAttribute("twin_site", twin_site);
         }
-        model.addAttribute("map", map);
         return "index";
     }
+//    @PostMapping("/")
+//    public String sendSearch(HttpServletRequest request, ModelMap model) throws IOException {
+//
+//        return "index";
+//    }
 }
