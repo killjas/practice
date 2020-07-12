@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: C:\Users\moi komputer\Desktop\13. SpringBootDemo\src\main\
+ java
+Main-Class: ru.itis.springbootdemo.SpringBootDemoApplication
+
