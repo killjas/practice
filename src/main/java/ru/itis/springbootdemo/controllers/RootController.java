@@ -20,11 +20,14 @@ public class RootController {
     public String getRootPage(ModelMap model,HttpServletRequest request) throws IOException {
         if(request.getParameter("search")!=null) {
             URL url;
+            String urlString;
             if(request.getParameter("search").indexOf("https://", -1) == 0 || request.getParameter("search").indexOf("http://", -1) == 0) {
                 url = new URL(request.getParameter("search"));
+                urlString = "https://cors-anywhere.herokuapp.com/" + request.getParameter("search");
             }
             else{
                 url = new URL("https://" + request.getParameter("search"));
+                urlString = "https://cors-anywhere.herokuapp.com/https://" + request.getParameter("search");
             }
             String site = url.getProtocol() + "://" + url.getHost();
             InputStream in = url.openStream();
@@ -38,6 +41,7 @@ public class RootController {
             }
             model.addAttribute("site", site);
             model.addAttribute("twin_site", twin_site);
+            model.addAttribute("urlString", urlString);
         }
         return "index";
     }
