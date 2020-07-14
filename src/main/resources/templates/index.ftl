@@ -10,13 +10,15 @@
     <#if site?has_content>
         <script>
             window.onload = function () {
+                var server1 = "https//proxy-app-practice.herokuapp.com";
+                var server2 = "http//localhost";
                 jQuery('a[href]:not([href^="http"]):not([href^="//"])').each(function () {
                     jQuery(this).prop('href', "${site}" + jQuery(this).prop('href'))
                 });
 
                 jQuery('a[href]:not([href^="//"])').each(function () {
                     jQuery(this).prop('href', "/?search=" + jQuery(this).prop('href'))
-                    jQuery(this).attr('href', jQuery(this).attr('href').replace('http//localhost', ''))
+                    jQuery(this).attr('href', jQuery(this).attr('href').replace(server1, ''))
                 });
                 jQuery('a[href^="//"]').each(function () {
                     jQuery(this).attr('href', jQuery(this).attr('href').replace('//', '/?search=https://'))
@@ -24,16 +26,16 @@
 
                 jQuery('link[href]:not([href^="http"]):not([href^="//"])').each(function () {
                     jQuery(this).prop('href', "${site}" + $(this).prop('href'))
-                    jQuery(this).attr('href', jQuery(this).attr('href').replace('http://localhost', ''))
+                    jQuery(this).attr('href', jQuery(this).attr('href').replace('https://proxy-app-practice.herokuapp.com', ''))
                 });
                 jQuery('img[src]:not([src^="http"]):not([src^="//"])').each(function () {
                     jQuery(this).prop('src', "${site}" + $(this).prop('src'));
                     jQuery(this).attr('src', jQuery(this).attr('src').replace('http//', ''));
-                    jQuery(this).attr('src', jQuery(this).attr('src').replace('http://localhost', ''))
+                    jQuery(this).attr('src', jQuery(this).attr('src').replace(server1, ''))
                 });
                 jQuery('image[src]:not([src^="http"]):not([src^="//"])').each(function () {
                     jQuery(this).prop('src', "${site}" + $(this).prop('src'))
-                    jQuery(this).attr('src', jQuery(this).attr('src').replace('http://localhost', ''))
+                    jQuery(this).attr('src', jQuery(this).attr('src').replace(server1, ''))
                 });
 
                 var form_data = jQuery(this).serialize();
