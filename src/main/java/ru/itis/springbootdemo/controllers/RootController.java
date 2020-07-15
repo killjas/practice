@@ -1,8 +1,10 @@
 package ru.itis.springbootdemo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import ru.itis.springbootdemo.services.UsersRequestService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -15,6 +17,8 @@ import java.util.Map;
 
 @Controller
 public class RootController {
+    @Autowired
+    private UsersRequestService usersRequestService;
 
     @GetMapping("/")
     public String getRootPage(ModelMap model,HttpServletRequest request) throws IOException {
@@ -43,6 +47,8 @@ public class RootController {
                 model.addAttribute("site", site);
                 model.addAttribute("twin_site", twin_site);
                 model.addAttribute("urlString", urlString);
+
+                usersRequestService.saveRequest(url.getHost() + url.getPath());
                 return "findPage";
             } catch (Exception e) {
                 return "index";
