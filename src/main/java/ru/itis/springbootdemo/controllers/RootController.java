@@ -18,7 +18,7 @@ public class RootController {
 
     @GetMapping("/")
     public String getRootPage(ModelMap model,HttpServletRequest request) throws IOException {
-        if(!request.getParameter("search").equals("")) {
+        if(request.getParameter("search")!=null) {
             URL url;
             String urlString;
             if(request.getParameter("search").indexOf("https://", -1) == 0 || request.getParameter("search").indexOf("http://", -1) == 0) {
