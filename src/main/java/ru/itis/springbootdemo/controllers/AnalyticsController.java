@@ -14,7 +14,7 @@ public class AnalyticsController {
     @Autowired
     private UsersRequestService usersRequestService;
 
-    @GetMapping("/analytics")
+    @GetMapping("/system/analytics")
     public String getInfoServer(ModelMap model){
         Analytics analyticsOfMonth = usersRequestService.getAnalyticsOfMonth();
         model.addAttribute("countOfRequests", analyticsOfMonth.getCountRequests());

@@ -34,9 +34,4 @@ public class InfoController {
         model.addAttribute("FS", FS);
         return "info_page";
     }
-
-    @GetMapping("/system/analytics")
-    public String getAnalytics(ModelMap model) {
-        return "analytics";
-    }
 }
