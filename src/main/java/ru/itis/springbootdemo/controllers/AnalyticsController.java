@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import ru.itis.springbootdemo.models.Analytics;
 import ru.itis.springbootdemo.services.UsersRequestService;
 
+import java.lang.reflect.Array;
+
 @Controller
 public class AnalyticsController {
     @Autowired
