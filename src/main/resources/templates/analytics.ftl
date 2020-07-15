@@ -8,7 +8,56 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
     <title>Аналитика</title>
+
+    <script>
+        var days = [<#list countUrlOfDay as day, count>"${day}",</#list>];
+        var count = [<#list countUrlOfDay as day, count>${count},</#list>];
+        console.log(days);
+        $(function () {
+            $('#container').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: "Количество запросов за день"
+                },
+                xAxis: {
+                    categories: days
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Количество запросов'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'День',
+                    data: count
+
+                },]
+            });
+        });
+    </script>
 </head>
 <body>
 <div id="site">
@@ -20,7 +69,7 @@
         <p>За последний месяц запросов не было </p>
     <#else>
         <p>Всего запросов - ${countOfRequests}</p>
-
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
         <p>По урлам</p>
         <table class="table table-striped">
@@ -31,19 +80,14 @@
             </tr>
             </thead>
             <tbody>
-        <#list countUrl as url,count>
-            <tr>
-                <td>${url}</td>
-                <td>${count} </td>
-            </tr>
-        </#list>
+            <#list countUrl as url,count>
+                <tr>
+                    <td>${url}</td>
+                    <td><a href="#">${count} </a></td>
+                </tr>
+            </#list>
             </tbody>
         </table>
-
-        <p>По дням</p>
-        <#list countUrlOfDay as day,count>
-            <div> ${day}   ${count} </div>
-        </#list>
 
     </#if>
 

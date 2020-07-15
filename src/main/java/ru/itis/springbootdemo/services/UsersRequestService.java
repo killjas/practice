@@ -6,12 +6,9 @@ import ru.itis.springbootdemo.models.Analytics;
 import ru.itis.springbootdemo.models.UsersRequest;
 import ru.itis.springbootdemo.repositories.UserRequestRepository;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,8 +35,6 @@ public class UsersRequestService {
                 .countUrl(urlCount)
                 .countUrlOnDay(countRequestOfDay)
                 .build();
-
-
     }
 
     /***
@@ -62,26 +57,22 @@ public class UsersRequestService {
 
     private Map<LocalDate, Integer> getCountRequestOfDay(List<UsersRequest> usersRequests) {
         Map<LocalDate, Integer> countRequests = new HashMap<>();
-
         usersRequests.forEach(usersRequest -> {
             if (countRequests.containsKey(usersRequest.getDate().toLocalDate())) {
                 countRequests.put(usersRequest.getDate().toLocalDate(), countRequests.get(usersRequest.getDate().toLocalDate()) + 1);
-            } else{
+            } else {
                 countRequests.put(usersRequest.getDate().toLocalDate(), 1);
             }
         });
         return countRequests;
 
-
     }
-
-
+    
     public void saveRequest(String url) {
         UsersRequest usersRequest = UsersRequest.builder()
                 .url(url)
                 .date(LocalDateTime.now())
                 .build();
-
         userRequestRepository.save(usersRequest);
     }
 }
