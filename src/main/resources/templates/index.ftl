@@ -25,11 +25,11 @@
                 });
 
                 jQuery('link[href]:not([href^="http"]):not([href^="//"])').each(function () {
-                    jQuery(this).prop('href', "${site}" + $(this).prop('href'))
+                    jQuery(this).prop('href', "${site}" + jQuery(this).prop('href'))
                     jQuery(this).attr('href', jQuery(this).attr('href').replace('https://proxy-app-practice.herokuapp.com', ''))
                 });
                 jQuery('img[src]:not([src^="http"]):not([src^="//"])').each(function () {
-                    jQuery(this).prop('src', "${site}" + $(this).prop('src'));
+                    jQuery(this).prop('src', "${site}" + jQuery(this).prop('src'));
                     jQuery(this).attr('src', jQuery(this).attr('src').replace('http//', ''));
                     jQuery(this).attr('src', jQuery(this).attr('src').replace(server1, ''))
                 });
@@ -60,15 +60,15 @@
 
                 jQuery('body').on('submit', '#form-livedemo', function (e) {
                     e.preventDefault();
-                    $('.hello').slideToggle(function () {
-                        if ($(this).is(':hidden')) {
-                            $('.buttonJson').html('HTML Format');
-                            $("#site").hide()
-                            $("#json").show()
+                    jQuery('.hello').slideToggle(function () {
+                        if (jQuery(this).is(':hidden')) {
+                            jQuery('.buttonJson').html('HTML Format');
+                            jQuery("#site").hide()
+                            jQuery("#json").show()
                         } else {
-                            $('.buttonJson').html('JSON Format');
-                            $("#site").show()
-                            $("#json").hide()
+                            jQuery('.buttonJson').html('JSON Format');
+                            jQuery("#site").show()
+                            jQuery("#json").hide()
                         }
                     });
                 });
