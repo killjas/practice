@@ -18,7 +18,7 @@ public class RootController {
 
     @GetMapping("/")
     public String getRootPage(ModelMap model,HttpServletRequest request) throws IOException {
-        if(request.getParameter("search")!=null) {
+        if(!request.getParameter("search").equals("")) {
             URL url;
             String urlString;
             if(request.getParameter("search").indexOf("https://", -1) == 0 || request.getParameter("search").indexOf("http://", -1) == 0) {
@@ -30,18 +30,24 @@ public class RootController {
                 urlString = "https://cors-anywhere.herokuapp.com/https://" + request.getParameter("search");
             }
             String site = url.getProtocol() + "://" + url.getHost();
-            InputStream in = url.openStream();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-            String line;
-            int i = 0;
-            Map<Integer, String> twin_site = new HashMap<>();
-            while ((line = reader.readLine()) != null) {
-                twin_site.put(i, line);
-                i++;
+            try {
+                InputStream in = url.openStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String line;
+                int i = 0;
+                Map<Integer, String> twin_site = new HashMap<>();
+                while ((line = reader.readLine()) != null) {
+                    twin_site.put(i, line);
+                    i++;
+                }
+                model.addAttribute("site", site);
+                model.addAttribute("twin_site", twin_site);
+                model.addAttribute("urlString", urlString);
+                return "findPage";
+            } catch (Exception e) {
+                return "index";
             }
-            model.addAttribute("site", site);
-            model.addAttribute("twin_site", twin_site);
-            model.addAttribute("urlString", urlString);
+
         }
         return "index";
     }
