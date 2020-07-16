@@ -20,29 +20,59 @@
         background-color: #4d78e0;
         color: white;
     }
+
     nav {
         background-color: #4d78e0;
     }
+
+    h1 {
+        font-size: 60pt;
+    }
+
+    p {
+        color #000000;
+        margin-left: 4px;
+    }
+
 </style>
 <body>
 <nav class="navbar">
-    <p class="navbar-brand">
-        Proxies
-    </p>
+    <br>
 </nav>
 <div>
     <main class="container">
-        <h1 style="color: #4d78e0">Proxies</h1>
-        <p>Сервис, позволяющий анонимно просматривать вебсайты, доступ к которым заблокирован провайдером, либо же
-            ограничен
-            владельцем ресурса.</p>
-        <div class="forma">
-            <form method="get" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Введите ссылку"
-                       aria-label="Search">
-                <button class="btn btn-primary my-2 my-sm-0" type="submit">Поиск</button>
-            </form>
+        <br>
+        <div class="row ">
+            <div class="col text-center">
+                <h1 style="color: #4d78e0">Proxies</h1>
+            </div>
         </div>
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                <p align="center"> Сервис, позволяющий анонимно просматривать вебсайты, доступ к которым
+                    заблокирован
+                    провайдером, либо же
+                    ограничен
+                    владельцем ресурса.</>
+            </div>
+        </div>
+        <br>
+        <form method="get" class="form">
+            <div class="row justify-content-md-center">
+                <div class="col-6">
+                    <div class="form-group">
+                        <input class="form-control" type="search" name="search" placeholder="Пример: https://github.com"
+                               aria-label="Search">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Поиск</button>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </form>
     </main>
 </div>
 </body>

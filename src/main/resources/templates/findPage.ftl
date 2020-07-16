@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <#if site?has_content>
         <script>
             window.onload = function () {
@@ -62,11 +64,11 @@
                     e.preventDefault();
                     $('.hello').slideToggle(function () {
                         if ($(this).is(':hidden')) {
-                            $('.buttonJson').html('HTML Format');
+                            $('#buttonJson').html('HTML Format');
                             $("#site").hide()
                             $("#json").show()
                         } else {
-                            $('.buttonJson').html('JSON Format');
+                            $('#buttonJson').html('JSON Format');
                             $("#site").show()
                             $("#json").hide()
                         }
@@ -75,18 +77,39 @@
             };
         </script>
     </#if>
+    <style>
+        nav {
+            background-color: #4d78e0;
+        }
+        .btn-light {
+            background-color: white;
+            color: #4d78e0;
+        }
+        .btn-light:hover,
+        .btn-light:focus,
+        .btn-light:visited {
+            background-color: white;
+            color: #4d78e0;
+        }
+
+    </style>
+
 </head>
 <body>
-<div>
+<nav class="navbar fixed-top">
+    <form method="get" class="form-inline">
+        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Пример: https://github.com" aria-label="Search">
+        <button class="btn btn-light my-2 my-sm-0" type="submit">Поиск</button>
+    </form>
     <div>
         <form id="form-livedemo" method="post">
-            <button type="submit" class="buttonJson">JSON Format</button>
+            <button type="submit" class="btn btn-light my-2 my-sm-0" id="buttonJson">JSON Format</button>
         </form>
     </div>
+</nav>
+<div>
     <div class="forma">
         <form method="get" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
     <div id="site">
