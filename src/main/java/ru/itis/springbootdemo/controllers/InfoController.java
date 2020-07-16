@@ -38,7 +38,7 @@ public class InfoController {
         model.addAttribute("ip", remoteAddr);
         if (remoteAddr == null || "".equals(remoteAddr)) {
             remoteAddr = request.getRemoteAddr();
-
+            model.addAttribute("ip", remoteAddr);
         }
         return "info_page";
     }
