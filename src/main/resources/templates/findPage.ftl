@@ -19,7 +19,7 @@
 
                 jQuery('a[href]:not([href^="//"])').each(function () {
                     jQuery(this).prop('href', "/?search=" + jQuery(this).prop('href'))
-                    jQuery(this).attr('href', jQuery(this).attr('href').replace(server2, ''))
+                    jQuery(this).attr('href', jQuery(this).attr('href').replace(server1, ''))
                 });
                 jQuery('a[href^="//"]').each(function () {
                     jQuery(this).attr('href', jQuery(this).attr('href').replace('//', '/?search=https://'))
@@ -27,16 +27,16 @@
 
                 jQuery('link[href]:not([href^="http"]):not([href^="//"])').each(function () {
                     jQuery(this).prop('href', "${site}" + $(this).prop('href'))
-                    jQuery(this).attr('href', jQuery(this).attr('href').replace('http://localhost', ''))
+                    jQuery(this).attr('href', jQuery(this).attr('href').replace('https://proxy-app-practice.herokuapp.com', ''))
                 });
                 jQuery('img[src]:not([src^="http"]):not([src^="//"])').each(function () {
                     jQuery(this).prop('src', "${site}" + $(this).prop('src'));
                     jQuery(this).attr('src', jQuery(this).attr('src').replace('http//', ''));
-                    jQuery(this).attr('src', jQuery(this).attr('src').replace(server2, ''))
+                    jQuery(this).attr('src', jQuery(this).attr('src').replace(server1, ''))
                 });
                 jQuery('image[src]:not([src^="http"]):not([src^="//"])').each(function () {
                     jQuery(this).prop('src', "${site}" + $(this).prop('src'))
-                    jQuery(this).attr('src', jQuery(this).attr('src').replace(server2, ''))
+                    jQuery(this).attr('src', jQuery(this).attr('src').replace(server1, ''))
                 });
 
                 var form_data = jQuery(this).serialize();
@@ -116,6 +116,7 @@
 
         }
         .form-control-control-form{
+            margin-right: 10px;
             display: block;
             width: 70%;
             height: calc(1.5em + 0.75rem + 2px);
@@ -144,6 +145,10 @@
             width: auto;
             vertical-align: middle;
         }
+        pre{
+            background-color: white;
+            color: black;
+        }
     </style>
 
 </head>
@@ -157,7 +162,6 @@
         <button type="submit" class="btn-btn-light-my-btn" id="buttonJson">JSON Format</button>
     </form>
 </nav>
-<br>
 <main id="site">
     <#if twin_site?has_content>
         <#list twin_site as map2,code>
