@@ -5,13 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import ru.itis.springbootdemo.models.Analytics;
-import ru.itis.springbootdemo.models.UsersRequest;
 import ru.itis.springbootdemo.services.UsersRequestService;
 
-import java.lang.reflect.Array;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -19,7 +14,7 @@ public class AnalyticsController {
     @Autowired
     private UsersRequestService usersRequestService;
 
-    @GetMapping("/analytics")
+    @GetMapping("/system/analytics")
     public String getAnalytics(ModelMap model) {
         Analytics analyticsOfMonth = usersRequestService.getAnalyticsOfMonth();
         model.addAttribute("countOfRequests", analyticsOfMonth.getCountRequests());

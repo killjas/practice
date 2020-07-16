@@ -23,7 +23,6 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-
     <title>Аналитика</title>
 
     <script>
@@ -49,7 +48,7 @@
                 },
                 tooltip: {
                     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    pointFormat: '<tr><td style="color:"#4d78e0";padding:0">{series.name}: </td>' +
                         '<td style="padding:0"><b>{point.y}</b></td></tr>',
                     footerFormat: '</table>',
                     shared: true,
@@ -62,38 +61,49 @@
                     }
                 },
                 series: [{
-                    name: 'День',
+                    name: 'Количество запросов',
                     data: count
 
                 },]
             });
         });
 
-        function f(url) {
-            console.log(url);
-            jQuery.ajax({
-                type: "GET",
-                url: "/analytics/more",
-                data: url,
-            });
-        }
     </script>
     <style>
-        .material-icons {
-            color: #4d78e0;
+        nav {
+            background-color: #4d78e0;
+        }
+
+        .navbar-brand {
+            color: white;
+        }
+
+        .nav-link {
+            color: white;
         }
 
     </style>
 </head>
 <body>
-<nav class="navbar">
-    <p class="navbar-brand">
-        Proxies
-    </p>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <h2><a class="navbar-brand" href="/">
+                Proxies
+            </a></h2>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/system/info">Информация о сервере</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/system/analytics">Аналитика</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <div class="container">
 
-    <div>
+    <div style="margin-top: 10px">
         <h1>Аналитика</h1>
         <p>Аналитика запросов за последний месяц</p>
     </div>
@@ -108,8 +118,8 @@
                 <div class="card-header" id="headingOne">
 
                     <div class="row">
-                        <div class="col-9">Адрес</div>
-                        <div class="col-3">Количество запросов</div>
+                        <div class="col-9"><b>Адрес</b></div>
+                        <div class="col-3"><b>Количество запросов</b></div>
                     </div>
                 </div>
             </div>
@@ -117,7 +127,7 @@
                 <div class="card">
                     <div class="card-header" id="heading${url?index}">
                         <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left collapsed" type="button"
+                            <button class="btn btn-block text-left collapsed" type="button"
                                     data-toggle="collapse"
                                     data-target="#collapse${url?index}" aria-expanded="false"
                                     aria-controls="collapse${url?index}">

@@ -32,9 +32,8 @@ public class UsersRequestService {
         urls.forEach(url -> {
             List<UsersRequest> usersRequests = userRequestRepository.getAllByUrlAndDateAfter(url, firstDayOfMonth);
             Map<String, String> request = new HashMap<>();
-            //TODO поменять на ip
             usersRequests.forEach(usersRequest -> request.put(usersRequest.getDate().format(DateTimeFormatter
-                    .ofPattern("dd.MM.yyyy hh:mm:ss")), url));
+                    .ofPattern("dd.MM.yyyy hh:mm:ss")), usersRequest.getIp()));
             detailedAnalytics.put(url, request);
         });
         return detailedAnalytics;
@@ -90,10 +89,11 @@ public class UsersRequestService {
 
     }
 
-    public void saveRequest(String url) {
+    public void saveRequest(String url, String ip) {
         UsersRequest usersRequest = UsersRequest.builder()
                 .url(url)
                 .date(LocalDateTime.now())
+                .ip(ip)
                 .build();
         userRequestRepository.save(usersRequest);
     }
