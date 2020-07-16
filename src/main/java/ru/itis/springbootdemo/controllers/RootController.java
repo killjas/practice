@@ -1,5 +1,6 @@
 package ru.itis.springbootdemo.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,9 +13,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Controller
 public class RootController {
     @Autowired
@@ -47,8 +50,10 @@ public class RootController {
                 model.addAttribute("site", site);
                 model.addAttribute("twin_site", twin_site);
                 model.addAttribute("urlString", urlString);
+                String remoteAddr = request.getHeader("X-FORWARDED-FOR");
 
-                usersRequestService.saveRequest(url.getHost() + url.getPath());
+                usersRequestService.saveRequest(url.getHost() + url.getPath(), remoteAddr);
+                log.info("url:  {}, time: {}, ip: {} ", url, new Date(), remoteAddr);
                 return "findPage";
             } catch (Exception e) {
                 return "index";
@@ -57,9 +62,4 @@ public class RootController {
         }
         return "index";
     }
-//    @PostMapping("/")
-//    public String sendSearch(HttpServletRequest request, ModelMap model) throws IOException {
-//
-//        return "index";
-//    }
 }

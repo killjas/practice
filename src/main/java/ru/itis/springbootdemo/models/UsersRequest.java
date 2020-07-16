@@ -6,9 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +20,10 @@ public class UsersRequest {
     private Long id;
     private String url;
     private LocalDateTime date;
+    private String ip;
+
+    public String getIp () {
+        if (ip == null) return "0.0.0.0";
+        return ip;
+    };
 }

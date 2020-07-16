@@ -6,17 +6,38 @@ import ru.itis.springbootdemo.models.Analytics;
 import ru.itis.springbootdemo.models.UsersRequest;
 import ru.itis.springbootdemo.repositories.UserRequestRepository;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.time.temporal.TemporalAdjusters;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import static java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME;
 
 @Service
+@Transactional
 public class UsersRequestService {
     @Autowired
     private UserRequestRepository userRequestRepository;
+
+    public Map<String, Map<String, String>> getDetailedAnalytics(Set<String> urls) {
+        Map<String, Map<String, String>> detailedAnalytics = new HashMap<>();
+        LocalDateTime firstDayOfMonth = LocalDateTime.now()
+                .with(TemporalAdjusters.firstDayOfMonth());
+        urls.forEach(url -> {
+            List<UsersRequest> usersRequests = userRequestRepository.getAllByUrlAndDateAfter(url, firstDayOfMonth);
+            Map<String, String> request = new HashMap<>();
+            usersRequests.forEach(usersRequest -> request.put(usersRequest.getDate().format(DateTimeFormatter
+                    .ofPattern("dd.MM.yyyy hh:mm:ss")), usersRequest.getIp()));
+            detailedAnalytics.put(url, request);
+        });
+        return detailedAnalytics;
+    }
 
     /***
      * Аналитика за месяц
@@ -67,11 +88,12 @@ public class UsersRequestService {
         return countRequests;
 
     }
-    
-    public void saveRequest(String url) {
+
+    public void saveRequest(String url, String ip) {
         UsersRequest usersRequest = UsersRequest.builder()
                 .url(url)
                 .date(LocalDateTime.now())
+                .ip(ip)
                 .build();
         userRequestRepository.save(usersRequest);
     }

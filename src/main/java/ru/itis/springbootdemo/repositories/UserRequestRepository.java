@@ -10,6 +10,5 @@ public interface UserRequestRepository extends JpaRepository<UsersRequest, Long>
 
     List<UsersRequest> getAllByDateAfter(LocalDateTime date);
 
-    @Override
-    List<UsersRequest> findAll();
+    List<UsersRequest> getAllByUrlAndDateAfter(String url, LocalDateTime date);
 }

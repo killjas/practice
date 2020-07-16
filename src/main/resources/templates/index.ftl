@@ -30,13 +30,12 @@
     }
 
     p {
-        color #000000;
+        color: #000000;
         margin-left: 4px;
     }
     .container{
         margin-top: 10%;
     }
-    nav{}
 
 </style>
 <body>
