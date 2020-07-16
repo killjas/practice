@@ -10,5 +10,7 @@ ${cpu}
 ${VM}
 <br>
 ${FS}
+<br>
+${ip}
 </body>
 </html>
