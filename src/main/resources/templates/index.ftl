@@ -41,10 +41,10 @@
 <body>
 <nav class="navbar">
     <br>
+    <br>
 </nav>
 <div>
     <main class="container">
-        <br>
         <div class="row ">
             <div class="col text-center">
                 <h1 style="color: #4d78e0">Proxies</h1>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Поиск</button>
+                    <button class="btn btn-primary my-2 my-sm-0 btn-block" type="submit">Поиск</button>
                 </div>
             </div>
             <div class="row">
