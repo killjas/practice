@@ -51,7 +51,9 @@ public class RootController {
                 model.addAttribute("twin_site", twin_site);
                 model.addAttribute("urlString", urlString);
                 String remoteAddr = request.getHeader("X-FORWARDED-FOR");
-
+                if (remoteAddr == null || "".equals(remoteAddr)) {
+                    remoteAddr = request.getRemoteAddr();
+                }
                 usersRequestService.saveRequest(url.getHost() + url.getPath(), remoteAddr);
                 log.info("url:  {}, time: {}, ip: {} ", url, new Date(), remoteAddr);
                 return "findPage";
