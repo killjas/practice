@@ -18,12 +18,13 @@
         .nav-link {
             color: white;
         }
-        .btn-primary{
+
+        .btn-primary {
             background-color: white;
             color: #4d78e0;
         }
-        }
-        .container{
+
+        .container {
             margin-top: 10%;
         }
 
@@ -66,34 +67,36 @@
         <button type="submit" class="btn btn-primary " id="buttonJson">JSON Format</button>
     </form>
 </nav>
-<h1  class="h1" align="center">Информация о сервере:</h1>
-<br>
-<div id="htmlview">
-<script>
-    var cpu = parseInt("${cpu}", 10);
-    cpu = Math.round(cpu);
-    if (cpu > 25) {
-        document.write("<div class = \"alert alert-danger\" role = \"alert\" >\n" +
-            "            <p> Загруженность ЦПУ:" + cpu + "% </p>\n" +
-            "        </div>")
-    }
-    if (cpu <= 25) {
-        document.write("<div class=\"alert alert-success\" role=\"alert\">\n" +
-            "    <p>Загруженность ЦПУ: " + cpu + " % </p>\n" +
-            "</div>")
-    }
+<div class="container">
+    <h1 class="h1" align="center">Информация о сервере:</h1>
+    <br>
+    <div id="htmlview">
+        <script>
+            var cpu = parseInt("${cpu}", 10);
+            cpu = Math.round(cpu);
+            if (cpu > 25) {
+                document.write("<div class = \"alert alert-danger\" role = \"alert\" >\n" +
+                    "            <p> Загруженность ЦПУ:" + cpu + "% </p>\n" +
+                    "        </div>")
+            }
+            if (cpu <= 25) {
+                document.write("<div class=\"alert alert-success\" role=\"alert\">\n" +
+                    "    <p>Загруженность ЦПУ: " + cpu + " % </p>\n" +
+                    "</div>")
+            }
 
-</script>
-<div class="alert alert-success" role="alert">
-    <p>Используется оперативной памяти: ${VM} MB</p>
+        </script>
+        <div class="alert alert-success" role="alert">
+            <p>Используется оперативной памяти: ${VM} MB</p>
+        </div>
+        <div class="alert alert-success" role="alert">
+            <p>Свободно памяти на диске: ${FS} MB</p>
+        </div>
+    </div>
+    <div id="jsonview" style="display: none">
+        <pre> {<br>  "info" : { <br>     "system" : [ <br>       {<br>         "cpu": "${cpu}" <br>       },<br>       { <br>         "VirtualMemory" : "${VM}" <br>       }, <br>       {<br>         "FreeSpace" : ${FS}"<br>       }<br>     ]<br>   }<br> }</pre>
+    </div>
+    <h1 class="hello"></h1>
 </div>
-<div class="alert alert-success" role="alert">
-    <p>Свободно памяти на диске: ${FS} MB</p>
-</div>
-</div>
-<div id="jsonview" style="display: none">
-    <pre> {<br>  "info" : { <br>     "system" : [ <br>       {<br>         "cpu": "${cpu}" <br>       },<br>       { <br>         "VirtualMemory" : "${VM}" <br>       }, <br>       {<br>         "FreeSpace" : ${FS}"<br>       }<br>     ]<br>   }<br> }</pre>
-</div>
-<h1 class="hello"></h1>
 </body>
 </html>
