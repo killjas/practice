@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import ru.itis.springbootdemo.services.UsersRequestService;
+import sun.util.logging.resources.logging;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -55,7 +56,9 @@ public class RootController {
                     remoteAddr = request.getRemoteAddr();
                 }
                 usersRequestService.saveRequest(url.getHost() + url.getPath(), remoteAddr);
+
                 log.info("url:  {}, time: {}, ip: {} ", url, new Date(), remoteAddr);
+                
                 return "findPage";
             } catch (Exception e) {
                 return "index";
