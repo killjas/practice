@@ -120,3 +120,115 @@
 2020-07-20 16:58:27.679  INFO 1072 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-07-20 16:58:27.687  INFO 1072 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-07-20 16:58:27.723  INFO 1072 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-20 17:37:16.329  INFO 6116 --- [main] r.i.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication on DESKTOP-DDH3L4K with PID 6116 (started by moi komputer in C:\Users\moi komputer\Desktop\practice)
+2020-07-20 17:37:16.367  INFO 6116 --- [main] r.i.s.SpringBootDemoApplication          : No active profile set, falling back to default profiles: default
+2020-07-20 17:37:18.422  INFO 6116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-20 17:37:18.578  INFO 6116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139ms. Found 2 repository interfaces.
+2020-07-20 17:37:19.220  INFO 6116 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b66eb3f4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-20 17:37:19.975  INFO 6116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-07-20 17:37:20.061  INFO 6116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-20 17:37:20.062  INFO 6116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-07-20 17:37:20.353  INFO 6116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-20 17:37:20.354  INFO 6116 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3876 ms
+2020-07-20 17:37:20.644  INFO 6116 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-20 17:37:23.277  INFO 6116 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-20 17:37:23.419  INFO 6116 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-20 17:37:23.822  INFO 6116 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2020-07-20 17:37:23.846  INFO 6116 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-07-20 17:37:24.302  INFO 6116 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-07-20 17:37:24.653  INFO 6116 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-07-20 17:37:24.702  INFO 6116 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2020-07-20 17:37:24.712  INFO 6116 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@12e5da86
+2020-07-20 17:37:31.197  INFO 6116 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-20 17:37:32.290  INFO 6116 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@96abc76, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b066c33, org.springframework.security.web.header.HeaderWriterFilter@9690008, org.springframework.security.web.authentication.logout.LogoutFilter@45bbc52f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@684ce74c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47fb7ec9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10ed037a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d69d288, org.springframework.security.web.session.SessionManagementFilter@79cb8ffa, org.springframework.security.web.access.ExceptionTranslationFilter@2d22d3b1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@74697863]
+2020-07-20 17:37:32.579  INFO 6116 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-20 17:37:32.642  WARN 6116 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-20 17:37:32.758  INFO 6116 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-20 17:37:33.098  INFO 6116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-07-20 17:37:33.102  INFO 6116 --- [main] r.i.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 18.012 seconds (JVM running for 20.837)
+2020-07-20 17:37:35.027  INFO 6116 --- [http-nio-80-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [0; __hstc=181257784.227cc99ebc38c7c4d1377c8c8742cd10.1594557719553.1594664476892.1594672067987.5; __cid=30a47e81-1f5c-4c72-9652-342574dcc5d2-938fb69c7061bffb4617a15c; _gid=GA1.1.1737646298.1595232274; tmr_detect=1%7C1595237352963; tmr_reqNum=450] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-07-20 17:37:35.064  INFO 6116 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-20 17:37:35.065  INFO 6116 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-20 17:37:35.096  INFO 6116 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 30 ms
+2020-07-20 17:37:42.027  INFO 6116 --- [http-nio-80-exec-2] r.i.s.controllers.RootController         : url:  https://github.com, time: Mon Jul 20 17:37:42 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:38:20.045  INFO 6116 --- [http-nio-80-exec-3] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:38:20 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:38:22.901  WARN 6116 --- [http-nio-80-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-07-20 17:38:25.886  INFO 6116 --- [http-nio-80-exec-5] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:38:25 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:38:27.774  WARN 6116 --- [http-nio-80-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-07-20 17:38:30.541  INFO 6116 --- [http-nio-80-exec-7] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:38:30 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:38:55.381  WARN 6116 --- [http-nio-80-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-07-20 17:38:58.047  INFO 6116 --- [http-nio-80-exec-10] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:38:58 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:39:30.108  INFO 6116 --- [http-nio-80-exec-1] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:39:30 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:39:49.170  INFO 3556 --- [main] r.i.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication on DESKTOP-DDH3L4K with PID 3556 (started by moi komputer in C:\Users\moi komputer\Desktop\practice)
+2020-07-20 17:39:49.190  INFO 3556 --- [main] r.i.s.SpringBootDemoApplication          : No active profile set, falling back to default profiles: default
+2020-07-20 17:39:51.191  INFO 3556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-20 17:39:51.334  INFO 3556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128ms. Found 2 repository interfaces.
+2020-07-20 17:39:52.009  INFO 3556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cd9f6485] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-20 17:39:52.509  INFO 3556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-07-20 17:39:52.545  INFO 3556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-20 17:39:52.545  INFO 3556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-07-20 17:39:52.773  INFO 3556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-20 17:39:52.773  INFO 3556 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3393 ms
+2020-07-20 17:39:53.014  INFO 3556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-20 17:39:55.477  INFO 3556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-20 17:39:55.551  INFO 3556 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-20 17:39:55.647  INFO 3556 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2020-07-20 17:39:55.650  INFO 3556 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-07-20 17:39:55.864  INFO 3556 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-07-20 17:39:56.077  INFO 3556 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-07-20 17:39:56.103  INFO 3556 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2020-07-20 17:39:56.113  INFO 3556 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@61bfc9bf
+2020-07-20 17:40:01.783  INFO 3556 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-20 17:40:03.249  INFO 3556 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@682618e5, org.springframework.security.web.context.SecurityContextPersistenceFilter@7cf8f45a, org.springframework.security.web.header.HeaderWriterFilter@7eaa2bc6, org.springframework.security.web.authentication.logout.LogoutFilter@60deefed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@40a1b6d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@204d9edf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42d9e8d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25ad25f5, org.springframework.security.web.session.SessionManagementFilter@4d81e83a, org.springframework.security.web.access.ExceptionTranslationFilter@67d8faec, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@333398f]
+2020-07-20 17:40:03.576  INFO 3556 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-20 17:40:03.665  WARN 3556 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-20 17:40:03.776  INFO 3556 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-20 17:40:04.033  INFO 3556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-07-20 17:40:04.036  INFO 3556 --- [main] r.i.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 15.957 seconds (JVM running for 18.522)
+2020-07-20 17:40:10.285  INFO 3556 --- [http-nio-80-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [0; __hstc=181257784.227cc99ebc38c7c4d1377c8c8742cd10.1594557719553.1594664476892.1594672067987.5; __cid=30a47e81-1f5c-4c72-9652-342574dcc5d2-938fb69c7061bffb4617a15c; _gid=GA1.1.1737646298.1595232274; tmr_detect=1%7C1595237352963; tmr_reqNum=450; _gat=1] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-07-20 17:40:10.298  INFO 3556 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-20 17:40:10.298  INFO 3556 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-20 17:40:10.314  INFO 3556 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-07-20 17:40:11.950  INFO 3556 --- [http-nio-80-exec-1] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:40:11 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:41:59.870  INFO 8436 --- [main] r.i.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication on DESKTOP-DDH3L4K with PID 8436 (started by moi komputer in C:\Users\moi komputer\Desktop\practice)
+2020-07-20 17:41:59.880  INFO 8436 --- [main] r.i.s.SpringBootDemoApplication          : No active profile set, falling back to default profiles: default
+2020-07-20 17:42:02.243  INFO 8436 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-20 17:42:02.414  INFO 8436 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152ms. Found 2 repository interfaces.
+2020-07-20 17:42:03.217  INFO 8436 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b2006fcd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-20 17:42:03.817  INFO 8436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-07-20 17:42:03.856  INFO 8436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-20 17:42:03.857  INFO 8436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-07-20 17:42:04.171  INFO 8436 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-20 17:42:04.172  INFO 8436 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4106 ms
+2020-07-20 17:42:04.516  INFO 8436 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-20 17:42:07.189  INFO 8436 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-20 17:42:07.275  INFO 8436 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-20 17:42:07.391  INFO 8436 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2020-07-20 17:42:07.401  INFO 8436 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-07-20 17:42:07.642  INFO 8436 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-07-20 17:42:07.892  INFO 8436 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-07-20 17:42:07.922  INFO 8436 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2020-07-20 17:42:07.933  INFO 8436 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4e49ce2b
+2020-07-20 17:42:13.680  INFO 8436 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-20 17:42:14.752  INFO 8436 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26c7b1c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@65600fb3, org.springframework.security.web.header.HeaderWriterFilter@71c0b742, org.springframework.security.web.authentication.logout.LogoutFilter@6d874695, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2c47a053, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ea71fc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79cb8ffa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19526f1d, org.springframework.security.web.session.SessionManagementFilter@73e1ecd0, org.springframework.security.web.access.ExceptionTranslationFilter@2abc55c4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4cc8d70d]
+2020-07-20 17:42:15.051  INFO 8436 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-20 17:42:15.158  WARN 8436 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-20 17:42:15.287  INFO 8436 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-20 17:42:15.609  INFO 8436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-07-20 17:42:15.614  INFO 8436 --- [main] r.i.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 16.733 seconds (JVM running for 25.301)
+2020-07-20 17:42:18.290  INFO 8436 --- [http-nio-80-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [0; __hstc=181257784.227cc99ebc38c7c4d1377c8c8742cd10.1594557719553.1594664476892.1594672067987.5; __cid=30a47e81-1f5c-4c72-9652-342574dcc5d2-938fb69c7061bffb4617a15c; _gid=GA1.1.1737646298.1595232274; tmr_detect=1%7C1595237352963; tmr_reqNum=450; _gat=1] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-07-20 17:42:18.307  INFO 8436 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-20 17:42:18.307  INFO 8436 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-20 17:42:18.325  INFO 8436 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-07-20 17:42:18.398  WARN 8436 --- [http-nio-80-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-07-20 17:42:20.833  INFO 8436 --- [http-nio-80-exec-2] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:42:20 MSK 2020, ip: 0:0:0:0:0:0:0:1 
+2020-07-20 17:42:51.094  INFO 8436 --- [http-nio-80-exec-3] r.i.s.controllers.RootController         : url:  https://store.steampowered.com/about/?snr=1_14_4__global-header, time: Mon Jul 20 17:42:51 MSK 2020, ip: 0:0:0:0:0:0:0:1 

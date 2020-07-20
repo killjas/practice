@@ -45,7 +45,7 @@
                 });
 
                 jQuery('link[href]:not([href^="http"]):not([href^="//"])').each(function () {
-                    jQuery(this).prop('href', "${site}" + $(this).prop('href'))
+                    jQuery(this).prop('href', "${site}" + jQuery(this).prop('href'))
                     jQuery(this).attr('href', jQuery(this).attr('href').replace('https://proxy-app-practice.herokuapp.com', ''))
                 });
                 jQuery('img[src]:not([src^="http"]):not([src^="//"])').each(function () {
@@ -60,7 +60,7 @@
 
 
 
-                jQuery('body').on('submit', '#form-livedemo', function (e) {
+                jQuery('body').on('click', '#form-livedemo', function (e) {
                     e.preventDefault();
                     jQuery('.hello').slideToggle(function () {
                         if (jQuery(this).is(':hidden')) {
@@ -160,7 +160,7 @@
         <button class="btn-btn-light-my-btn" type="submit">Поиск</button>
     </form>
     <form id="form-livedemo" method="post">
-        <button type="submit" class="btn-btn-light-my-btn" id="buttonJson">JSON Format</button>
+        <button type="click" class="btn-btn-light-my-btn" id="buttonJson">JSON Format</button>
     </form>
 </nav>
 <main id="site">
