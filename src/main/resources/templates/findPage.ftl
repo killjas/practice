@@ -61,15 +61,15 @@
 
                 jQuery('body').on('submit', '#form-livedemo', function (e) {
                     e.preventDefault();
-                    $('.hello').slideToggle(function () {
-                        if ($(this).is(':hidden')) {
-                            $('#buttonJson').html('HTML Format');
-                            $("#site").hide()
-                            $("#json").show()
+                    jQuery('.hello').slideToggle(function () {
+                        if (jQuery(this).is(':hidden')) {
+                            jQuery('#buttonJson').html('HTML Format');
+                            jQuery("#site").hide()
+                            jQuery("#json").show()
                         } else {
-                            $('#buttonJson').html('JSON Format');
-                            $("#site").show()
-                            $("#json").hide()
+                            jQuery('#buttonJson').html('JSON Format');
+                            jQuery("#site").show()
+                            jQuery("#json").hide()
                         }
                     });
                 });
